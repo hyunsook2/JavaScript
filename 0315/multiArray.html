@@ -23,6 +23,15 @@
         console.log(toArr);
         console.table(toArr);
 
+        let arr=new Array(3);
+        for(let row=0;row<3;row++){
+            arr[row]=new Array(3);
+            for(let col=0;col<3;col++){
+                arr[row][col]="["+row+","+col+"]";
+                document.write(arr[row][col]+" ");
+            }
+            document.write("<br>");
+        }
     </script>
 </body>
 </html>
