@@ -27,7 +27,7 @@
         const chkbox = document.querySelector('#chkbox');
         chkbox.addEventListener('click',function(e){
             msg.innerHTML+='<code>preventDefault()</code><br>';
-            e.preventDefault();
+            e.preventDefault(); //preventDefault = 정지
         });
         const msg=document.querySelector('#message');
         const body=document.querySelector('body');
