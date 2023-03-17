@@ -70,7 +70,17 @@
                     }
                 });
             }
-            devide
+            devide(8,2).then(res=>{
+                console.log('정상',res);
+            return res;
+        }).then(tran=>{
+            console.log('두번째',triple(3));
+        }).catch(err=>console.log('에러',err));
+
+        function triple(num){
+            return num*3;
+        }
+
     </script>
 </body>
 </html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+
+        .screen {
+
+            background-color: skyblue;
+            width: 220px;
+            height: 40px;
+            margin: auto;
+            display: block;
+            text-align: center;
+        }
+
+        .clear {
+            background-color: green;
+            width: 70px;
+            height: 30px;
+            display: grid;
+            color: white;
+            text-align: center;
+        }
+
+        .clear:active {
+            background-color: green;
+            box-shadow: 0 1px black inset;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.274);
+            width: 600px;
+            height: 520px;
+            border-radius: 10px;
+            display: grid;
+            margin: auto;
+            box-shadow: 5px 5px 10px black,
+                0 0 15px purple,
+                0 0 30px maroon;
+        }
+
+        .button {
+            background-color: whitesmoke;
+            width: 120px;
+            height: 80px;
+            border-radius: 10px;
+            margin: auto;
+            display: inline;
+            font-size: 200%;
+            text-align: center;
+        }
+
+        .button:active {
+            background-color: yellow;
+            box-shadow: 0 1px black;
+            transform: translateY(8px);
+        }
+
+        .operator {
+            background-color: rgb(237, 211, 19);
+            width: 120px;
+            height: 80px;
+            border-radius: 10px;
+            margin: auto;
+            display: inline;
+            font-size: 200%;
+            color: white;
+        }
+
+        .operator:active {
+            background-color: black;
+            box-shadow: 0 1px black;
+            transform: translateY(8px);
+        }
+
+        .equal-sign {
+            background-color: blueviolet;
+            width: 120px;
+            height: 80px;
+            border-radius: 10px;
+            margin: auto;
+            display: inline;
+            color: white;
+        }
+    </style>
+</head>
+<script>
+    function display(val) {
+        document.getElementById('result').value += val;
+        return val;
+    }
+    function clearScreen(){
+    document.getElementById('result').value = '';
+    }
+
+    function solve(){
+    let x = document.getElementById('result').value;
+    let y = eval(x);
+    document.getElementById('result').value = y;
+    return y;
+    }
+    // let f = document.querySelector('.keys').firstElementChild;
+    // f.addEventListener('click',display(f.value));
+    // f.onclick=function(){display(f.value);};
+    let button=document.getElementsByClassName('button');
+    let operator=document.getElementsByClassName('operator');
+    for(let button of buttons){
+        let val=button.value;
+        if(!button.className.includes('equal-sign')){
+            button.addEventListener('click',()=>display(val));
+        }
+    }
+    for(let oper of operator){
+        let val=oper.value;
+        oper.addEventListener('click',()=>display(val));
+    }
+    document.querySelector('.equal-sign').addEventListener('click',()=>solve())
+    function ec(){
+            window.alert(screen +" 정답 : ");
+            clearScreen();
+        }
+</script>
+
+<body>
+    <h1 style="text-align:center">Calculator App</h1>
+    <div class="container">
+        <br>
+        <table>
+            <tr>
+                <td colspan="3"><input type='text' id='result' class='screen' style="text-align: right;"></td>
+                <td>
+                    <input type='button' value='C' class="clear" onclick="clearScreen()" />
+                </td>
+            </tr>
+        </table>
+        <div class="keys">
+            <input type="button" value="7" class="button" onclick="display(this.value)"></input>
+            <input type="button" value="8" class="button" onclick="display(this.value)"></input>
+            <input type="button" value="9" class="button" onclick="display(this.value)"></input>
+            <input type="button" value="/" class="operator" onclick="display(this.value)"></input>
+            <br>
+            <input type="button" value="4" class="button" onclick="display(this.value)"></input>
+            <input type="button" value="5" class="button" onclick="display(this.value)"></input>
+            <input type="button" value="6" class="button" onclick="display(this.value)"></input>
+            <input type="button" value="*" class="operator" onclick="display(this.value)"></input>
+            <br>
+            <input type="button" value="1" class="button" onclick="display(this.value)"></input>
+            <input type="button" value="2" class="button" onclick="display(this.value)"></input>
+            <input type="button" value="3" class="button" onclick="display(this.value)"></input>
+            <input type="button" value="-" class="operator" onclick="display(this.value)""></input>
+            <br>
+            <input type="button" value="0" class="button" onclick="display(this.value)"></input>
+            <input type="button" value="." class="button" onclick="display(this.value)"></input>
+            <input type="button" value="=" class="button equal-sign" onclick="ec()"></input>
+            <input type="button" value="+" class="operator" onclick="display(this.value)"></input>
+
+        </div>
+    </div>
+</body>
+
+</html>
