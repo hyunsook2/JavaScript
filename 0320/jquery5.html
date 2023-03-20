@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" , content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        div {
+            position: absolute;
+            background-color: lightsalmon;
+            left: 0px;
+            top: 30px;
+            width: 60px;
+            height: 60px;
+            margin: 5px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block"></div>
+    <button id="go">GO</button>
+    <button id="stop">STOP</button>
+    <button id="back">BACK</button>
+    <button id="top">TOP</button>
+    <button id="down">DOWN</button>
+    <button id="color">COLOR</button>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+    <button id="hide">hide</button>
+    <p>paragraph</p>
+    <script>
+        $('#go').click(()=>{
+            $('.block').animate({left:"+=100px",opacity:"0.4"},"slow");
+            $('.block').animate({left:"+=100px",opacity:"1.0"},"fast");
+        });
+        $('#stop').click(()=>{
+            $('.block').stop();
+        });
+        $('#back').click(()=>{
+            $('.block').animate({left:'-=100px',opacity:"0.4"},"slow");
+            $('.block').animate({left:'-=100px',opacity:"1.0"},"fast");
+        });
+        $('#top').click(()=>{
+            $('.block').animate({top:'-=100px',opacity:"0.4"},"slow");
+            $('.block').animate({top:'-=100px',opacity:"1.0"},"fast");
+        });
+        $('#down').click(()=>{
+            $('.block').animate({top:'+=100px',opacity:"0.4"},"slow");
+            $('.block').animate({top:'+=100px',opacity:"1.0"},"fast");
+        });
+        $('#color').click(()=>{
+            $('.block').css('background-color','black')
+        });
+    </script>
+<script>
+    $('#hide').click(function(){
+        $('p').toggle('slow',function(){
+            alert('paragraph is hidden');
+        })
+        // $('p').hide(1000);
+        // alert("The paragraph is hidden");
+    });
+</script>
+
+    <button id="chain">click</button>
+    <p id="p2">paragraph</p>
+<script>
+       $('#chain').click(() => {
+            $('#p2').slideUp(1000).css('color', 'red').delay(500).queue(function() {
+                setTimeout(() => {
+                    $('#p2').slideDown(2000).css('color', 'blue');
+                    $(this).dequeue();
+                }, 2000);
+            });
+        });
+</script>
+
+</body>
+</html>
