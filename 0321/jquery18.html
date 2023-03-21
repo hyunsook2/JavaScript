@@ -19,6 +19,9 @@
     <script>
         let count=0;
         let event='keydown';
+        // event+=' keypress';
+        // event+=' keyup';
+        // event='input';
         $('#target').on(event,function(e){
             console.log(e,e.keyCode,e.which);
             if(e.which===13){
@@ -26,6 +29,9 @@
             }
             count++;
             $('div').html(`event ${count}번 발생`);
+        });
+        $('#btn').click(function(){
+            $('#target').trigger(event);
         })
     </script>
 </body>
