@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+    <style>
+        @import url(./css/style.css);
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity=""></script>
+</head>
+<body>
+    <h2 id="clock"></h2>
+    <form class="hidden" id="login-form">
+        <input required maxlength="15" type="text" placeholder="당신의 이름을 입력하세요"/><button type="submit" value="로그인"></button>
+    </form>
+    <h1 class="hidden" id="greeting"></h1>
+    <form id="todo-form">
+        <input type="text" placeholder="할 일을 입력하고 엔터키를 누르세요" required>
+    </form>
+<ul id="todo-list"></ul>
+<div id="quote">
+    <span></span>
+    <span></span>
+</div>
+<div id="weather">
+        <span></span>
+        <span></span>
+    </div>
+    <script src="./js/clock.js"></script>
+</body>
+</html>
