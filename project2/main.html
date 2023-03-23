@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" , content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+    <style>
+        @import url(./css/style.css);
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity=""></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="d-flex flex-wrap justify-content-center text-white fs-1">
+        <a><span class="badge hours text-white"></span></a> :
+        <a><span class="badge min text-white"></span></a> :
+        <a><span class="badge sec text-white"></span></a>
+    </div>
+
+    <form class="d-none row g-3" id="login-form">
+        <div class="col-auto">
+            <input required maxlength="15" type="text" placeholder="당신의 이름을 입력하세요" />
+        </div>
+        <div class="col-auto">
+            <input type="submit" value="로그인" id="loginInput" class="btn btn-primary"></button>
+        </div>
+    </form>
+    <p class="h2 d-none text-white" id="greeting">dd</p>
+    <form id="todo-form">
+        <input class="form-control" type="text" required placeholder="해야할 일을 입력하고 엔터키를 누르세요" />
+    </form>
+    <div class="card" style="width:18rem;">
+        <div class="card-header" style="background-color: green;">
+            To Do List
+        </div>
+        <b>
+            <ul id="todo-list" style="background-color: skyblue; font-size: larger; color:rgb(53, 22, 255)"></ul>
+        </b>
+        <ul id="todo-list" class="list-group list-group-flush bg-info"></ul>
+    </div>
+    <div id="quote" class="contain-sm bg-white rounded-3">
+        <figure class="text-center">
+            <blockquote class="blockquote" style="color:silver; background-color: black;">
+                <span></span>
+            </blockquote>
+            <figcaption class="blockquote-footer" style="color: purple; background-color: silver;">
+                <span></span>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="card-body">
+        <div id="weather" class="card" style="width: 18rem;">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <a href="#" class="text-decoration-none">link no underline</a>
+    <script src="./js/greetings.js"></script>
+    <script src="./js/clock.js"></script>
+    <script src="./js/todo.js"></script>
+    <script src="./js/weather.js"></script>
+    <script src="./js/quotes.js"></script>
+    <script src="./js/background.js"></script>
+</body>
+
+</html>

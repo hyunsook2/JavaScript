@@ -3,14 +3,15 @@
 // const greeting = document.getElementById("greeting");
 
 const KEY='name';
-const loginForm = document.querySelector("#login-form");
-const greeting = document.querySelector("#greeting");
-const loginInput=document.querySelector('#login-form input');
+const loginForm=$("#login-form");
+const greeting=$("#greeting");
+const loginInput=$('#login-form input');
 
 const savedUsername=localStorage.getItem(KEY);
 if(savedUsername===null){
-    loginForm.classList.remove('hidden');
-    loginForm.addEventListener('submit', loginSubmit);
+    $(loginForm).removeClass('d-none');
+    loginForm.on('submit', loginSubmit);
+    
 }else{
   printGreeting(savedUsername);
 }
