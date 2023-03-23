@@ -11,14 +11,15 @@ const savedUsername=localStorage.getItem(KEY);
 if(savedUsername===null){
     $(loginForm).removeClass('d-none');
     loginForm.on('submit', loginSubmit);
-    
 }else{
   printGreeting(savedUsername);
 }
+
 function printGreeting(username){
   greeting.innerHTML=`안녕하세요. ${username}`;
   greeting.classList.remove('hidden');
 }
+
 function loginSubmit(event){
   // event.preventDefault();
   // loginForm.classList.add('hidden');
